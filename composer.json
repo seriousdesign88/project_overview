@@ -1,9 +1,14 @@
 {
-  "name": "seriousdesign/project_overview",
-  "description": "Project Overview module for Drupal",
-  "type": "drupal-module",
-  "license": "GPL-2.0+",
-  "require": {
-    "drupal/core": "^10 || ^11"
-  }
+    "name": "seriousdesign/project_overview",
+    "description": "Project Overview module for Drupal",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/core": "^10 || ^11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\field_reports\\": "src/"
+        }
+    }
 }
