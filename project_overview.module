@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Implements hook_theme().
+ */
+
+function project_overview_theme($existing, $type, $theme, $path) {
+  return [
+    'project-overview' => [
+      'variables' => [
+        'items' => [],
+        'title' => '',
+      ],
+    ],
+  ];
+}

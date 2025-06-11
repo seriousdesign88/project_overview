@@ -1,0 +1,35 @@
+project_overview.overview:
+  title: 'Project Overview'
+  description: 'Project Configuration Overview'
+  parent: system.admin
+  route_name: project_overview.overview
+  weight: 3
+
+project_overview.content_type_fields:
+  title: 'Entities and fields'
+  description: 'View fields within Entities'
+  parent: project_overview.overview
+  route_name: project_overview.fields
+  weight: 0
+
+project_overview.provider_list:
+  title: 'View Providers'
+  description: 'Providers'
+  parent: project_overview.overview
+  route_name: project_overview.provider_list
+  weight: 1
+
+# to change
+project_overview.services_report:
+  title: 'View Sevices'
+  description: 'Services'
+  parent: project_overview.overview
+  route_name: project_overview.services
+  weight: 8
+
+project_overview.entity_list:
+  title: 'Entities'
+  description: 'Providers'
+  parent: project_overview.overview
+  route_name: project_overview.list
+  weight: 6

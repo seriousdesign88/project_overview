@@ -1,0 +1,9 @@
+{
+  "name": "seriousdesign/project_overview",
+  "description": "Project Overview module for Drupal",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "require": {
+    "drupal/core": "^10 || ^11"
+  }
+}

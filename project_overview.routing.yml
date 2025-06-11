@@ -1,0 +1,48 @@
+project_overview.overview:
+  path: "/project-overview"
+  defaults:
+    _controller: '\Drupal\project_overview\Controller\ProjectOverview::overview'
+    _title: "Project Overview"
+  requirements:
+    _permission: "access project overview"
+
+project_overview.fields:
+  path: "/admin/project-overview/content-type-fields"
+  defaults:
+    _controller: '\Drupal\project_overview\Controller\EntityListingController::listContentTypeFields'
+    _title: "Entity Type Fields"
+  requirements:
+    _permission: "access project overview"
+
+
+project_overview.services:
+  path: "/admin/project-overview/services"
+  defaults:
+    _controller: '\Drupal\project_overview\Controller\ServiceListController::listServices'
+    _title: "Service List"
+  requirements:
+    _permission: "access project overview"
+
+project_overview.routes:
+  path: "/admin/project-overview/routes"
+  defaults:
+    _controller: '\Drupal\project_overview\Controller\RouteListController::listRoutes'
+    _title: "Routes List"
+  requirements:
+    _permission: "access project overview"
+
+project_overview.provider_list:
+  path: "/admin/project-overview/providers"
+  defaults:
+    _controller: '\Drupal\project_overview\Controller\EntityListingController::listProviders'
+    _title: "Providers List"
+  requirements:
+    _permission: "access project overview"
+
+project_overview.list:
+  path: "/admin/project-overview/providers"
+  defaults:
+    _controller: '\Drupal\project_overview\Controller\EntityListingController::listProviders'
+    _title: "Providers List"
+  requirements:
+    _permission: "access project overview"
