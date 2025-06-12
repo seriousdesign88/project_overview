@@ -16,6 +16,8 @@ class ProjectOverview extends ControllerBase {
     // Pass variables to the Twig template.
     $variables = [
       'title' => $this->t('Task List'),
+      'description' => $this->t('This page provides an overview of the project tasks.'),
+      'project_version' => '1.0.2',
     ];
 
     return [
