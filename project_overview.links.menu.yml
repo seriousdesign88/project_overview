@@ -21,7 +21,7 @@ project_overview.provider_list:
 
 # to change
 project_overview.services_report:
-  title: 'View Sevices'
+  title: 'View Services'
   description: 'Services'
   parent: project_overview.overview
   route_name: project_overview.services
