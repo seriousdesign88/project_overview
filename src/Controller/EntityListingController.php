@@ -23,11 +23,21 @@ class EntityListingController extends ControllerBase {
     // Prepare an array to group fields by content type.
     $grouped_fields = [];
 
+    // Exclude fields attached to these entity types.
+    $excluded = [
+      'media',
+      'product',
+      'user',
+      'profile',
+      'commerce_product',
+      'block_content',
+      'comment',
+    ];
+
     foreach ($field_storage_configs as $field_storage_config) {
       // Only include fields attached to nodes (content types).
       // if ($field_storage_config->getTargetEntityTypeId() === 'node') {.
-      if ($field_storage_config->getTargetEntityTypeId() !== 'media' && $field_storage_config->getTargetEntityTypeId() !== 'product' && $field_storage_config->getTargetEntityTypeId() !== 'user'  && $field_storage_config->getTargetEntityTypeId() !== 'profile' &&  $field_storage_config->getTargetEntityTypeId() !== 'commerce_product' && $field_storage_config->getTargetEntityTypeId() !== 'profile'
-      && $field_storage_config->getTargetEntityTypeId() !== 'block_content' && $field_storage_config->getTargetEntityTypeId() !== 'comment') {
+      if (!in_array($field_storage_config->getTargetEntityTypeId(), $excluded)) {
         $bundles = $field_storage_config->getBundles();
         foreach ($bundles as $content_type) {
           $grouped_fields[$content_type][] = [
