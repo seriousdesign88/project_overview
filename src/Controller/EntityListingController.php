@@ -4,6 +4,8 @@ namespace Drupal\project_overview\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\field\Entity\FieldStorageConfig;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Provides a controller to list ECK entity types and their entities.
@@ -13,10 +15,15 @@ class EntityListingController extends ControllerBase {
   /**
    * Lists all fields and their configurations for content types.
    *
-   * @return array
-   *   A render array for the page.
+   * Supports output formats of HTML, JSON, or Markdown based on the query
+   * parameter "format". HTML is returned by default.
+   *
+   * @return \Symfony\Component\HttpFoundation\Response|array
+   *   A Response object for JSON/Markdown or a render array for HTML output.
    */
   public function listContentTypeFields() {
+    $format = \Drupal::request()->query->get('format', 'html');
+
     // Get all field storage configurations.
     $field_storage_configs = FieldStorageConfig::loadMultiple();
 
@@ -43,7 +50,7 @@ class EntityListingController extends ControllerBase {
           $grouped_fields[$content_type][] = [
             'field_name' => $field_storage_config->getName() . ' ' . $field_storage_config->getTargetEntityTypeId(),
             'field_type' => $field_storage_config->getType(),
-            'settings' => json_encode($field_storage_config->getSettings(), JSON_PRETTY_PRINT),
+            'settings' => $field_storage_config->getSettings(),
           ];
         }
       }
@@ -57,7 +64,7 @@ class EntityListingController extends ControllerBase {
         $rows[] = [
           $field['field_name'],
           $field['field_type'],
-          $field['settings'],
+          json_encode($field['settings'], JSON_PRETTY_PRINT),
         ];
       }
 
@@ -78,7 +85,27 @@ class EntityListingController extends ControllerBase {
       ];
     }
 
-    return $output;
+    // Provide different output formats based on the "format" query parameter.
+    switch (strtolower($format)) {
+      case 'json':
+        return new JsonResponse($grouped_fields);
+
+      case 'markdown':
+        $markdown = '';
+        foreach ($grouped_fields as $type => $fields) {
+          $markdown .= '## ' . $type . "\n";
+          foreach ($fields as $field) {
+            $markdown .= '* **' . $field['field_name'] . '** (' . $field['field_type'] . ")\n";
+            $markdown .= '  - `settings`: ' . json_encode($field['settings']) . "\n";
+          }
+          $markdown .= "\n";
+        }
+        return new Response($markdown, 200, ['Content-Type' => 'text/markdown']);
+
+      case 'html':
+      default:
+        return $output;
+    }
   }
 
   /**
