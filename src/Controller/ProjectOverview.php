@@ -17,7 +17,7 @@ class ProjectOverview extends ControllerBase {
     $variables = [
       'title' => $this->t('Task List'),
       'description' => $this->t('This page provides an overview of the project tasks.'),
-      'project_version' => '1.0.2',
+      'project_version' => '1.0.3',
     ];
 
     return [
