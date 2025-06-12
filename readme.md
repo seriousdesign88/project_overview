@@ -5,7 +5,8 @@ Project Overview is a Drupal module that provides a centralized dashboard for vi
 ## Features
 
 - **Project Overview Dashboard:** View a summary page with project information.
-- **Entities and Fields:** List all content entity types and their fields.
+- **Entities and Fields:** List all content entity types and their fields. Add
+  `?format=json` or `?format=markdown` to the URL for alternative outputs.
 - **Services Report:** View all custom services registered in the service container.
 - **Routes List:** Display all routes defined by custom modules.
 - **Providers List:** See all entity types grouped by their provider.
