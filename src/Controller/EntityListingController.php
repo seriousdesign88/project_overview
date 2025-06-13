@@ -3,6 +3,7 @@
 namespace Drupal\project_overview\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Url;
 use Drupal\field\Entity\FieldStorageConfig;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -72,7 +73,29 @@ class EntityListingController extends ControllerBase {
    * Builds a render array for HTML output.
    */
   private function buildHtmlRenderArray(array $grouped_fields): array {
-    $output = [];
+    $render = [
+      '#type' => 'container',
+      'format_buttons' => [
+        '#type' => 'container',
+        '#attributes' => ['class' => ['format-toggle-buttons']],
+        'json' => [
+          '#type' => 'link',
+          '#title' => $this->t('JSON'),
+          '#url' => Url::fromRoute('project_overview.fields', [], ['query' => ['format' => 'json']]),
+          '#attributes' => ['class' => ['button']],
+        ],
+        'markdown' => [
+          '#type' => 'link',
+          '#title' => $this->t('Markdown'),
+          '#url' => Url::fromRoute('project_overview.fields', [], ['query' => ['format' => 'markdown']]),
+          '#attributes' => ['class' => ['button']],
+        ],
+      ],
+      'fields' => [
+        '#type' => 'container',
+      ],
+    ];
+
     foreach ($grouped_fields as $content_type => $fields) {
       $rows = [];
       foreach ($fields as $field) {
@@ -82,7 +105,7 @@ class EntityListingController extends ControllerBase {
           json_encode($field['settings'], JSON_PRETTY_PRINT),
         ];
       }
-      $output[] = [
+      $render['fields'][] = [
         '#type' => 'details',
         '#title' => $this->t('Content Type: @type', ['@type' => $content_type]),
         '#open' => FALSE,
@@ -98,7 +121,8 @@ class EntityListingController extends ControllerBase {
         ],
       ];
     }
-    return $output;
+
+    return $render;
   }
 
   /**
