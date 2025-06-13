@@ -2,5 +2,5 @@ name: 'Project Overview'
 type: module
 description: 'Entities and Fields, Services, Routes, and Providers'
 core_version_requirement: ^10 || ^11
-version: '1.0.3'
+version: '1.0.4'
 package: SeriousDesign

@@ -1,9 +1,8 @@
 project_overview.overview:
   title: 'Project Overview'
   description: 'Project Configuration Overview'
-  parent: system.admin
+  parent: system.admin_reports
   route_name: project_overview.overview
-  weight: 3
 
 project_overview.content_type_fields:
   title: 'Entities and fields'
