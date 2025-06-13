@@ -31,6 +31,7 @@ Drupal core version ^10 or ^11
 Controllers are located in src/Controller.
 Custom theme hook is defined in project_overview.module.
 Menu and routing configuration can be found in the .yml files.
+Run `composer install` to pull in development dependencies like Drupal core.
 
 ## License
 GPL-2.0-or-later

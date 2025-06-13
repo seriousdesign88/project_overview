@@ -3,7 +3,8 @@
     "description": "Project Overview module for Drupal",
     "type": "drupal-module",
     "license": "GPL-2.0-or-later",
-    "require": {
+    "require": {},
+    "require-dev": {
         "drupal/core": "^10 || ^11"
     },
     "autoload": {
