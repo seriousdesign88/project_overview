@@ -1,0 +1,191 @@
+{
+  "drawer_slide_system": [
+    {
+      "field_name": "attribute_color commerce_product_variation",
+      "field_type": "entity_reference",
+      "settings": {
+        "target_type": "commerce_product_attribute_value"
+      }
+    },
+    {
+      "field_name": "attribute_length commerce_product_variation",
+      "field_type": "entity_reference",
+      "settings": {
+        "target_type": "commerce_product_attribute_value"
+      }
+    },
+    {
+      "field_name": "attribute_material commerce_product_variation",
+      "field_type": "entity_reference",
+      "settings": {
+        "target_type": "commerce_product_attribute_value"
+      }
+    },
+    {
+      "field_name": "attribute_surface commerce_product_variation",
+      "field_type": "entity_reference",
+      "settings": {
+        "target_type": "commerce_product_attribute_value"
+      }
+    },
+    {
+      "field_name": "feeds_item commerce_product_variation",
+      "field_type": "feeds_item",
+      "settings": {
+        "target_type": "feeds_feed"
+      }
+    },
+    {
+      "field_name": "field_downloads commerce_product_variation",
+      "field_type": "entity_reference_revisions",
+      "settings": {
+        "target_type": "paragraph"
+      }
+    },
+    {
+      "field_name": "field_drawing_no commerce_product_variation",
+      "field_type": "string",
+      "settings": {
+        "max_length": 255,
+        "case_sensitive": false,
+        "is_ascii": false
+      }
+    },
+    {
+      "field_name": "field_dxf_files commerce_product_variation",
+      "field_type": "file",
+      "settings": {
+        "target_type": "file",
+        "display_field": false,
+        "display_default": false,
+        "uri_scheme": "public"
+      }
+    },
+    {
+      "field_name": "field_equipment commerce_product_variation",
+      "field_type": "list_string",
+      "settings": {
+        "allowed_values": {
+          "synthetic_rollers": "synthetic rollers",
+          "synthetic_silent_rollers": "synthetic silent rollers",
+          "solid_synthetic_rollers": "solid synthetic rollers",
+          "synthetic_encased_steel_ball_bearings": "synthetic encased steel ball bearings",
+          "solid_synthetic_rollers_and_synthetic_encased_steel_ball_bearings": "solid synthetic rollers and synthetic encased steel ball bearings",
+          "stainless_steel_ball_bearings_with_integrated_synthetic_gliding_ring": "stainless steel ball bearings with integrated synthetic gliding ring",
+          "steel_ball_bearings": "steel ball bearings",
+          "stainless_steel_ball_bearings": "stainless steel ball bearings",
+          "ball_bearing_cages": "ball bearing cages",
+          "stainless_steel_ball_bearing_cages": "stainless steel ball bearing cages"
+        },
+        "allowed_values_function": ""
+      }
+    },
+    {
+      "field_name": "field_extension commerce_product_variation",
+      "field_type": "physical_measurement",
+      "settings": {
+        "measurement_type": "length"
+      }
+    },
+    {
+      "field_name": "field_in_stock commerce_product_variation",
+      "field_type": "boolean",
+      "settings": []
+    },
+    {
+      "field_name": "field_length_for_filter commerce_product_variation",
+      "field_type": "physical_measurement",
+      "settings": {
+        "measurement_type": "length"
+      }
+    },
+    {
+      "field_name": "field_load_capacity commerce_product_variation",
+      "field_type": "physical_measurement",
+      "settings": {
+        "measurement_type": "weight"
+      }
+    },
+    {
+      "field_name": "field_packaging_type commerce_product_variation",
+      "field_type": "list_string",
+      "settings": {
+        "allowed_values": {
+          "on_request": "On request",
+          "sets_per_box": "Sets per Box",
+          "set_per_polybag": "Set per Polybag",
+          "piece": "Piece",
+          "set_per_box": "Set per Box",
+          "pieces": "pieces",
+          "sets": "sets",
+          "set": "set",
+          "pairs": "pairs"
+        },
+        "allowed_values_function": ""
+      }
+    },
+    {
+      "field_name": "field_packaging_unit commerce_product_variation",
+      "field_type": "integer",
+      "settings": {
+        "unsigned": false,
+        "size": "normal"
+      }
+    },
+    {
+      "field_name": "field_part_no commerce_product_variation",
+      "field_type": "string",
+      "settings": {
+        "max_length": 255,
+        "case_sensitive": false,
+        "is_ascii": false
+      }
+    },
+    {
+      "field_name": "field_product_details_for_filter commerce_product_variation",
+      "field_type": "string",
+      "settings": {
+        "max_length": 255,
+        "case_sensitive": false,
+        "is_ascii": false
+      }
+    },
+    {
+      "field_name": "field_step_files commerce_product_variation",
+      "field_type": "file",
+      "settings": {
+        "target_type": "file",
+        "display_field": false,
+        "display_default": false,
+        "uri_scheme": "public"
+      }
+    },
+    {
+      "field_name": "field_technical_sheet_in commerce_product_variation",
+      "field_type": "file",
+      "settings": {
+        "target_type": "file",
+        "display_field": false,
+        "display_default": false,
+        "uri_scheme": "public"
+      }
+    },
+    {
+      "field_name": "field_technical_sheet_mm commerce_product_variation",
+      "field_type": "file",
+      "settings": {
+        "target_type": "file",
+        "display_field": false,
+        "display_default": false,
+        "uri_scheme": "public"
+      }
+    },
+    {
+      "field_name": "field_weight commerce_product_variation",
+      "field_type": "physical_measurement",
+      "settings": {
+        "measurement_type": "weight"
+      }
+    }
+  ]
+}
